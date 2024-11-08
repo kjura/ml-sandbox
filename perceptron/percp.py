@@ -88,7 +88,11 @@ for _ in range(number_of_iterations):
         weights += eta * class_label_delta * xi 
         bias += eta * class_label_delta
 
-        error_count_per_training_iteration += int((eta * class_label_delta) != 0.0)
+        # error_count_per_training_iteration += int((eta * class_label_delta) != 0.0)
+        if class_label_delta != 0.0:
+            error_count_per_training_iteration += 1
+        else:
+            error_count_per_training_iteration += 0
 
         # if class_label_delta != 0:
         #     error_count_per_training_iteration += 1
